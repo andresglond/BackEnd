@@ -13,7 +13,7 @@ public class CalculatorAPI {
     @PostMapping
     public ResponseEntity executeOperation(@RequestBody OperationDTO operationDTO){
 
-        String response = null; // <-- Utilice esta variable para luego mostrar el resultado
+        String response = ""; // <-- Utilice esta variable para luego mostrar el resultado
 
         return ResponseEntity.ok(response);
     }
