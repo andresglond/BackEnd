@@ -13,7 +13,11 @@ public class CalculatorAPI {
     @PostMapping
     public ResponseEntity executeOperation(@RequestBody OperationDTO operationDTO){
 
-        String response = ""; // <-- Utilice esta variable para luego mostrar el resultado
+        Calculator calculator = new Calculator(operationDTO.getNumber1(), operationDTO.getNumber2(), operationDTO.getOperation());
+        calculator.operationValidate();
+
+
+        String response = calculator.toString(); // <-- Utilice esta variable para luego mostrar el resultado
 
         return ResponseEntity.ok(response);
     }
