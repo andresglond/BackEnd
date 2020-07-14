@@ -15,7 +15,7 @@ public class StringAPI {
     public ResponseEntity executeOperation(@RequestBody OperationJSON operationJSON){
         int value=0;
         String response = "";
-        ManageString1 exercise2 = new ManageString1(operationJSON.getResult());
+        ManageString1 exercise2 = new ManageString1();
 
         do {
             System.out.println("Please select a valid option");
