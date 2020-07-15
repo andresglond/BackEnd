@@ -2,20 +2,14 @@ package com.andresglond.backendApp.modules.string_1;
 
 import java.io.Serializable;
 
-public class OperationJSON implements Serializable {
+public class ReplaceTextDTO implements Serializable {
 
-    private String result;
+
     private String text;
     private String word1;
     private String word2;
 
-    public void setResult(String word) {
-        this.result = word;
-    }
 
-    public String getResult() {
-        return result;
-    }
     public void setText (String word) {
         this.text = word;
     }
