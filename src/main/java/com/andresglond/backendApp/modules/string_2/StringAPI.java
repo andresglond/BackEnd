@@ -1,4 +1,4 @@
-package com.andresglond.backendApp.modules.String;
+package com.andresglond.backendApp.modules.string_2;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

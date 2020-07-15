@@ -1,4 +1,4 @@
-package com.andresglond.backendApp.modules.String;
+package com.andresglond.backendApp.modules.string_2;
 
 public class ManageString2 {
 
@@ -26,11 +26,11 @@ public class ManageString2 {
         for(int i = 0; i < word.length(); i++) {
             arreglo[i] = word.charAt(i);
             if(Character.isLowerCase(arreglo[i]){
-                   arreglo[i] = Character.toUpperCase(arreglo[i]);
+                arreglo[i] = Character.toUpperCase(arreglo[i]);
             } else {
                 arreglo[i] = Character.toLowerCase(arreglo[i]);
             }
-           string = string + arreglo[i];
+            string = string + arreglo[i];
         }
         return string;
     }
