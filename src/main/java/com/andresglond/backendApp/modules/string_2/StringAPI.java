@@ -11,15 +11,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "manageString")
 public class StringAPI {
 
-    @PostMapping
-    public ResponseEntity executeOperation(@RequestBody OperationJSON operationJSON){
+    @PostMapping(path = "/convertByCharacter")
+    public ResponseEntity convertToUpperOrLowerCaseByCharacter(@RequestBody TextDTO textDTO) {
 
-        ManageString2 exercise3 = new ManageString2(operationJSON.getResult());
-
-
-
-        String response = exercise3.toString(); // <-- Utilice esta variable para luego mostrar el resultado
+        String response = "";
+        ManageString2 exercise3 = new ManageString2();
+        response = exercise3.convertToUpperOrLowerCaseByCharacter(textDTO.getText());
 
         return ResponseEntity.ok(response);
     }
+
+    @PostMapping(path = "/limitTextSize")
+    public ResponseEntity limitTextSize(@RequestBody TextDTO textDTO) {
+
+        String response = "";
+        ManageString2 exercise3 = new ManageString2();
+        response = exercise3.limitTextSize(textDTO.getText());
+
+        return ResponseEntity.ok(response);
+    }
+
 }

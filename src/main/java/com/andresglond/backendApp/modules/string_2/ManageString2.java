@@ -2,35 +2,18 @@ package com.andresglond.backendApp.modules.string_2;
 
 public class ManageString2 {
 
-    private String result;
+    public String convertToUpperOrLowerCaseByCharacter(String text) {
 
-    public ManageString2() {
-
-    }
-    public ManageString2(String word) {
-        this.result = word;
-    }
-
-    public void setResult(String word) {
-        this.result = word;
-    }
-
-    public String getResult() {
-        return result;
-    }
-
-    public String convertToUpperOrLowerCaseByCharacter(String word) {
-
-        Character[] arreglo = new Character[];
-        String string;
-        for(int i = 0; i < word.length(); i++) {
-            arreglo[i] = word.charAt(i);
-            if(Character.isLowerCase(arreglo[i]){
-                arreglo[i] = Character.toUpperCase(arreglo[i]);
+        char aux;
+        String string="";
+        for(int i = 0; i < text.length(); i++) {
+            aux = text.charAt(i);
+            if(Character.isLowerCase(aux)){
+                aux = Character.toUpperCase(aux);
             } else {
-                arreglo[i] = Character.toLowerCase(arreglo[i]);
+                aux = Character.toLowerCase(aux);
             }
-            string = string + arreglo[i];
+            string = string + aux;
         }
         return string;
     }
@@ -38,23 +21,23 @@ public class ManageString2 {
 
     public String limitTextSize(String text) {
 
-        Character[] arreglo = new Character[];
-        String string;
-        int aux = 0;
+        char aux;
+        String string="";
+        int aux2 = 0;
         for (int i = 0; i < text.length(); i++) {
-            arreglo[i] = text.charAt(i);
+            aux = text.charAt(i);
 
             if (aux == 80) {
                 string = string + "\n";
-                aux = 0;
+                aux2 = 0;
             } else {
-                string = string + arreglo[i];
-                aux = aux + 1;
+                string = string + aux;
+                aux2 = aux2 + 1;
             }
 
         }
         return string;
     }
 
-    //public String[][]
+
 }
