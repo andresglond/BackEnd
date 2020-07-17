@@ -51,7 +51,7 @@ public class ManageString2 {
         enters = text.length() - text.replaceAll("\n","").length();
         tabulations = text.length() - text.replaceAll("\t","").length();
         commas = text.length() - text.replaceAll(",","").length();
-        period = text.length() - text.replaceAll(".","").length();
+        period = text.length() - text.replaceAll("\\.","").length();
         System.out.println(text.replaceAll(".","").length());
         dataDTO.setSpaces(spaces);
         dataDTO.setEnters(enters);
