@@ -1,5 +1,6 @@
 package com.andresglond.backendApp.modules.string_2;
 
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +30,18 @@ public class StringAPI {
         response = exercise3.limitTextSize(textDTO.getText());
 
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping(path = "/countData", consumes = { MediaType.APPLICATION_JSON_VALUE,
+            MediaType.APPLICATION_XML_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE,
+            MediaType.APPLICATION_XML_VALUE })
+    public ResponseEntity countData(@RequestBody TextDTO textDTO) {
+
+        DataDTO dataDTO;
+        ManageString2 exercise3 = new ManageString2();
+        dataDTO = exercise3.countData(textDTO.getText());
+
+        return ResponseEntity.ok(dataDTO);
     }
 
 }

@@ -27,8 +27,8 @@ public class ManageString2 {
         for (int i = 0; i < text.length(); i++) {
             aux = text.charAt(i);
 
-            if (aux == 80) {
-                string = string + "\n";
+            if (aux2 == 80) {
+                string = string + aux + "\n";
                 aux2 = 0;
             } else {
                 string = string + aux;
@@ -38,6 +38,31 @@ public class ManageString2 {
         }
         return string;
     }
+    public DataDTO countData(String text) {
+
+        char aux;
+        int spaces;
+        int enters;
+        int tabulations;
+        int commas;
+        int period;
+        DataDTO dataDTO = new DataDTO();
+        spaces = text.length() - text.replaceAll(" ","").length();
+        enters = text.length() - text.replaceAll("\n","").length();
+        tabulations = text.length() - text.replaceAll("\t","").length();
+        commas = text.length() - text.replaceAll(",","").length();
+        period = text.length() - text.replaceAll(".","").length();
+        dataDTO.setSpaces(spaces);
+        dataDTO.setEnters(enters);
+        dataDTO.setTabulations(tabulations);
+        dataDTO.setCommas(commas);
+        dataDTO.setPeriod(period);
+
+
+        return dataDTO;
+    }
+
+
 
 
 }
