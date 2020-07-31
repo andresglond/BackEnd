@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "manageString")
-public class StringAPI {
+public class CadenaAPI {
 
     @PostMapping(path = "/convertByCharacter")
     public ResponseEntity convertToUpperOrLowerCaseByCharacter(@RequestBody TextDTO textDTO) {
