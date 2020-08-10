@@ -9,15 +9,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 import java.util.ArrayList;
+
 @RestController
 @RequestMapping(path = "manageArrays")
 public class ArrayAPI {
 
 
+Array arreglo = new Array();
+Array suma = new Array();
+Array booleanos = new Array();
+
     @PostMapping(path = "/getHelloWorld")
     public ResponseEntity getHelloWorld() {
 
-        char[] response = new char[11];
+        CharArrayDTO response = new CharArrayDTO();
         Array exercise5 = new Array();
         response = exercise5.getHelloWorld();
 
@@ -26,7 +31,7 @@ public class ArrayAPI {
     @PostMapping(path = "/getArrayFromString")
     public ResponseEntity getArrayFromString(@RequestBody StringDTO stringDTO) {
 
-        char[] response = new char[100];
+        CharArrayDTO response = new CharArrayDTO();
         Array exercise5 = new Array();
         response = exercise5.getArrayFromString(stringDTO.getText());
 
@@ -37,8 +42,9 @@ public class ArrayAPI {
     public ResponseEntity getArrayOfStrings(@RequestBody StringDTO stringDTO) {
 
         ArrayList<String> response = new ArrayList<String>();
-        Array exercise5 = new Array();
-        response = exercise5.getArrayOfStrings(stringDTO.getText());
+
+
+        response = arreglo.getArrayOfStrings(stringDTO.getText());
 
         return ResponseEntity.ok(response);
     }
@@ -47,8 +53,7 @@ public class ArrayAPI {
     public ResponseEntity getSumOfIntegers(@RequestBody IntegerDTO integerDTO) {
 
         ArrayListDTO response = new ArrayListDTO();
-        Array exercise5 = new Array();
-        response = exercise5.getSumOfIntegers(integerDTO.getValue());
+        response = suma.getSumOfIntegers(integerDTO.getValue());
 
         return ResponseEntity.ok(response);
     }
@@ -57,8 +62,8 @@ public class ArrayAPI {
     public ResponseEntity getDataBoolean(@RequestBody BooleanDTO booleanDTO) {
 
         BooleanArrayListDTO response = new BooleanArrayListDTO();
-        Array exercise5 = new Array();
-        response = exercise5.getDataBoolean(booleanDTO.isValue());
+
+        response = booleanos.getDataBoolean(booleanDTO.isValue());
 
         return ResponseEntity.ok(response);
     }

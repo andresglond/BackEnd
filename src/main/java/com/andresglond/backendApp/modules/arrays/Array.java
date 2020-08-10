@@ -7,35 +7,40 @@ public class Array {
     ArrayList<String> texts = new ArrayList<String>();
     ArrayList<Integer> numbers = new ArrayList<Integer>();
     ArrayList<Boolean> booleans = new ArrayList<Boolean>();
-    int sum, trueV, falseV;
+    int trueV = 0, falseV = 0;
 
-    public char[] getHelloWorld() {
+    public CharArrayDTO getHelloWorld() {
         char[] array = {'H','e','l','l','o',' ','W','o','r','l','d'};
-
-        return array;
+        CharArrayDTO arreglo = new CharArrayDTO();
+        arreglo.setArray(array);
+        return arreglo;
     }
 
-    public char[] getArrayFromString(String text){
+    public CharArrayDTO getArrayFromString(String text){
         char[] array = new char[text.length()];
+        CharArrayDTO arreglo = new CharArrayDTO();
         for(int i = 0; i<text.length();i++){
             array[i] = text.charAt(i);
         }
-        return array;
+        arreglo.setArray(array);
+        return  arreglo;
     }
 
-    public ArrayList<String> getArrayOfStrings(String text) {
+    public ArrayList <String> getArrayOfStrings(String text) {
         texts.add(text);
         return texts;
     }
 
     public ArrayListDTO getSumOfIntegers(int integer){
         ArrayListDTO arrayListDTO = new ArrayListDTO();
-
+        int sum = 0;
 
         numbers.add(integer);
         arrayListDTO.setNumArray(numbers);
-        sum = arrayListDTO.getSumArray();
-        sum += integer;
+        for(int i = 0; i<numbers.size();i++){
+
+            sum = sum + numbers.get(i);
+        }
         arrayListDTO.setSumArray(sum);
 
         return arrayListDTO;
@@ -60,7 +65,7 @@ public class Array {
         String text="";
         for(int i = 0;i<array.length;i++){
             if(i==0){
-                text= ""+ array[i];
+                text = "" + array[i];
             }
             else {
                 text = text + " " + array[i];
@@ -71,9 +76,9 @@ public class Array {
 
     public int getResultado(int[] array){
         int value = 0;
-        for(int i = 0; i<array.length;i++){
+        for(int i = 0; i< array.length;i++){
             if(i > 0){
-                if(i % 2 == 0){
+                if(i % 2 != 0){
                     value = value + array[i];
                 }else {
                     value = value - array[i];
